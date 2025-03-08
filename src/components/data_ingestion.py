@@ -6,6 +6,21 @@ from src.logger import logging
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from dataclasses import dataclass
+from src.utils import save_object
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+
+'''The @dataclass decorator in Python is used to automatically generate special methods for a class, such as:
+
+__init__() for initialization
+__repr__() for a human-readable representation
+__eq__() for comparison
+Other utility methods (e.g., __hash__() if needed)
+Why Use @dataclass?
+Less Boilerplate Code: You don't need to manually write an __init__ method.
+Automatic Initialization: Fields are automatically initialized with type hints and default values.
+Readability: The class is more readable and maintainable, especially for configuration and data storage purposes.
+'''
 
 @dataclass
 class DataIngestionConfig:
@@ -50,4 +65,7 @@ class DataIngestion:
 
 if __name__ == "__main__":
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data_path, test_data_path, raw_data_path = obj.initiate_data_ingestion()
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data_path, test_data_path)
+    
