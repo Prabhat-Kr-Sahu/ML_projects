@@ -48,38 +48,39 @@ class ModelTrainer:
                 "AdaBoost Classifier": AdaBoostClassifier(),
             }
 
-            # params={
-            #     "Decision Tree": {
-            #         'criterion':['gini','entropy']
-            #     },
-            #     "Random Forest":{
-            #         'n_estimators': [8,16,32,64,128,256]
-            #     },
-            #     "Gradient Boosting":{
-            #         'learning_rate':[.1,.01,.05,.001],
-            #         'subsample':[0.6,0.7,0.9,1.0],
-            #         'n_estimators': [8,16,32,64,128,256]
-            #     },
-            #     "Linear Regression":{},
-            #     "K-Neighbors Classifier":{
-            #         'n_neighbors':[5,7,9,11]
-            #     },
-            #     "XGBClassifier":{
-            #         'learning_rate':[.1,.01,.05,.001],
-            #         'n_estimators': [8,16,32,64,128,256]
-            #     },
-            #     "CatBoosting Classifier":{
-            #         'depth': [6,8,10],
-            #         'learning_rate': [0.01, 0.05, 0.1],
-            #         'iterations': [30, 50, 100]
-            #     },
-            #     "AdaBoost Classifier":{
-            #         'learning_rate':[.1,.01,.05,.001],
-            #         'n_estimators': [8,16,32,64,128,256]
-            #     }
-            # }
+            params={
+                "Decision Tree": {
+                    'criterion':['gini','entropy']
+                },
+                "Random Forest":{
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "Gradient Boosting":{
+                    'learning_rate':[.1,.01,.05,.001],
+                    'subsample':[0.6,0.7,0.9,1.0],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "Linear Regression":{},
+                "K-Neighbors Classifier":{
+                    'n_neighbors':[5,7,9,11]
+                },
+                # "XGBClassifier":{
+                #     'learning_rate':[.1,.01,.05,.001],
+                #     'n_estimators': [8,16,32,64,128,256]
+                # },
+                
+                "CatBoosting Classifier":{
+                    'depth': [6,8,10],
+                    'learning_rate': [0.01, 0.05, 0.1],
+                    'iterations': [30, 50, 100]
+                },
+                "AdaBoost Classifier":{
+                    'learning_rate':[.1,.01,.05,.001],
+                    'n_estimators': [8,16,32,64,128,256]
+                }
+            }
 
-            model_report: dict = evaluate_models(X_train, y_train, X_test, y_test, models)
+            model_report: dict = evaluate_models(X_train, y_train, X_test, y_test, models, params)
 
             best_model_score = max(sorted(model_report.values()))
 
