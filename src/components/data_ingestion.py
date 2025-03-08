@@ -10,6 +10,9 @@ from src.utils import save_object
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+
 '''The @dataclass decorator in Python is used to automatically generate special methods for a class, such as:
 
 __init__() for initialization
@@ -67,5 +70,9 @@ if __name__ == "__main__":
     obj = DataIngestion()
     train_data_path, test_data_path, raw_data_path = obj.initiate_data_ingestion()
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data_path, test_data_path)
+    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data_path, test_data_path)
+    modeltrainer=ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr, test_arr))
+    
+    
     
