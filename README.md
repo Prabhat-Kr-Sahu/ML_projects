@@ -1,6 +1,6 @@
-# ML Projects Repository
+# SCORE PREDICTION
 
-Welcome to the **ML Projects** repository! 🚀 This repository contains various Machine Learning projects covering different domains, including data preprocessing, model training, and deployment.
+**Prediction of Math Score** - This project predicts students' math scores based on various features such as gender, race/ethnicity, parental level of education, lunch type, test preparation course, and reading & writing scores.
 
 ## 📌 Repository Overview
 This repository includes:
@@ -48,8 +48,6 @@ python app.py
 ```
 Then, visit `http://127.0.0.1:5000` in your browser.
 
-## 📊 Projects Included
-- **Project 1**: **Prediction of Math Score** - This project predicts students' math scores based on various features such as gender, race/ethnicity, parental level of education, lunch type, test preparation course, and reading & writing scores.
 
 
 ## 🤝 Contribution Guidelines
