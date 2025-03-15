@@ -8,25 +8,30 @@ This repository includes:
 - **Model Training**: Implementation of various machine learning models.
 - **Deployment**: Flask/Django-based web applications for model inference.
 - **Evaluation Metrics**: Performance analysis and comparison of models.
+- **Dockerization**: Prebuilt Docker image for easy deployment.
 
-## 📂 Project Structure
+## 📚 Project Structure
 ```
-ML_projects/
+score_prediction/
 │── data/               # Raw and processed datasets
 │── notebooks/          # Jupyter Notebooks for experiments and analysis
 │── src/
 │   ├── pipeline/       # Data processing and model prediction pipeline
 │   ├── models/         # Trained models and model training scripts
 │   ├── app.py         # Flask-based web application
+│── docker/            # Docker-related files
+│   ├── Dockerfile      # Docker image configuration
 │── README.md           # Project documentation
 │── requirements.txt    # Dependencies
+│── .dockerignore       # Files to ignore in Docker builds
+│── .gitignore          # Files to ignore in Git
 ```
 
 ## 🚀 Getting Started
 ### **1. Clone the Repository**
 ```bash
-git clone git@github.com:Prabhat-Kr-Sahu/ML_projects.git
-cd ML_projects
+git clone git@github.com:Prabhat-Kr-Sahu/score_prediction.git
+cd score_prediction
 ```
 
 ### **2. Set Up a Virtual Environment**
@@ -48,7 +53,13 @@ python app.py
 ```
 Then, visit `http://127.0.0.1:5000` in your browser.
 
-
+### **5. Run Using Docker**
+To pull and run the prebuilt Docker image, use:
+```bash
+docker pull raegar069/score-app
+docker run -p 5000:5000 raegar069/score-app
+```
+Then, access the application at `http://127.0.0.1:5000`.
 
 ## 🤝 Contribution Guidelines
 Feel free to contribute to this repository!
@@ -57,7 +68,7 @@ Feel free to contribute to this repository!
 3. Commit your changes.
 4. Push and create a pull request.
 
-## 📄 License
+## 📝 License
 This repository is open-source and available under the **MIT License**.
 
 ## 🔗 Connect with Me
